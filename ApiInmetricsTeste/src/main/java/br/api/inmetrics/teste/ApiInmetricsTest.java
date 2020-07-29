@@ -13,7 +13,7 @@ public class ApiInmetricsTest extends BaseTest {
 	public void deveCadastrarUsuarioComSucesso() {
 		given()
 		.contentType(APP_CONTENT_TYPE)
-		.body("{\"email\": \"leandro.nares@gmail.com\",\"empregadoId\": 01,\"password\": \"leandro\"}")
+		.body("{\"admissao\":\"25/07/2000\",\"cargo\": \"Analista\",\"comissao\": \"1.000,00\",\"cpf\": \"075.216.116-40\",\"departamentoId\": 1,\"nome\": \"Leandro Pereira\",\"salario\": \"1.000,00\",\"sexo\":\"m\",\"tipoContratacao\":\"clt\"}")
 		.auth().basic("inmetrics", "automacao")
 	.when()
 		.post("/cadastrar")
@@ -27,9 +27,9 @@ public class ApiInmetricsTest extends BaseTest {
 		given()
 		.auth().basic("inmetrics", "automacao")
 	.when()
-		.get("/list_all/01")
+		.get("/list/181")
 	.then()
-		.statusCode(200)	
+		.statusCode(202)	
 	;	
 	}
 	
@@ -50,12 +50,12 @@ public class ApiInmetricsTest extends BaseTest {
 	public void deveAlterarUsuarioCadastrado() {
 		given()
 		.contentType(APP_CONTENT_TYPE)
-		.body("{\"email\": \"leandro.pereira@outlook.com\",\"empregadoId\": 01,\"password\": \"leandro\"}")
+		.body("{\"admissao\":\"25/07/2000\",\"cargo\": \"Analista de Testes automatizados\",\"comissao\": \"1.000,00\",\"cpf\": \"075.216.116-40\",\"departamentoId\": 1,\"nome\": \"Leandro Pereira\",\"salario\": \"1.000,00\",\"sexo\":\"m\",\"tipoContratacao\":\"clt\"}")
 		.auth().basic("inmetrics", "automacao")
 	.when()
-		.post("/alterar/01")
+		.put("/alterar/181")
 	.then()
-		.statusCode(200)	
+		.statusCode(202)	
 	;
 	}
 }
