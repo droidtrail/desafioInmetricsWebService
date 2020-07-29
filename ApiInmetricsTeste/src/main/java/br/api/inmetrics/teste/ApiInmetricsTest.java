@@ -13,7 +13,7 @@ public class ApiInmetricsTest extends BaseTest {
 	public void deveCadastrarUsuarioComSucesso() {
 		given()
 		.contentType(APP_CONTENT_TYPE)
-		.body("{\"admissao\":\"25/07/2000\",\"cargo\": \"Analista\",\"comissao\": \"1.000,00\",\"cpf\": \"075.216.116-40\",\"departamentoId\": 1,\"nome\": \"Leandro Pereira\",\"salario\": \"1.000,00\",\"sexo\":\"m\",\"tipoContratacao\":\"clt\"}")
+		.body("{\"admissao\":\"25/07/2000\",\"cargo\": \"Analista\",\"comissao\": \"1.000,00\",\"cpf\": \"075.216.116-40\",\"departamentoId\": 1,\"nome\": \"Leandro Pereira Teste via API\",\"salario\": \"1.000,00\",\"sexo\":\"m\",\"tipoContratacao\":\"clt\"}")
 		.auth().basic("inmetrics", "automacao")
 	.when()
 		.post("/cadastrar")
