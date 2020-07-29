@@ -18,7 +18,7 @@ public class ApiInmetricsTest extends BaseTest {
 	.when()
 		.post("/cadastrar")
 	.then()
-		.statusCode(200)	
+		.statusCode(202)	
 	;
 	}
 	
